@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <a class="{{ block.type }}" href="#">
+    {{#if block.id}}
+      {{block.id.name}}
+    {{else}}{{#unless block.parent}}
+      &lt;anonymous&gt;
+    {{else}}
+      {{filename}}
+    {{/unless}}
+    {{/if}}
+    <code>
+      L{{ block.loc.start.line }}:{{ block.loc.start.column }}
+    </code>
+    </a>
+  </div>
+  <ol>
+    {{#each variables}}
+      {{#if defs.length}}
+        <li class="{{ defs.0.type }}" data-index="{{@index}}">
+          <a href="#"><code contenteditable>{{ name }}</code></a>
+          <code>
+            L{{ defs.0.node.loc.start.line }}:{{ defs.0.node.loc.start.column }}
+          </code>
+        </li>
+      {{/if}}
+    {{/each}}
+  </ol>
+</div>

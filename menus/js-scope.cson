@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable js-scope': 'js-scope:toggle'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'js-scope'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'js-scope:toggle' }
+      ]
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "js-scope",
+  "main": "./lib/js-scope",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A short description of your package",
+  "activationEvents": [
+    "js-scope:toggle"
+  ],
+  "repository": "https://github.com/atom/js-scope",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "scoped": "~2.1.0",
+    "inherits": "~2.0.1",
+    "esprima": "~1.0.4",
+    "escope": "~1.0.1",
+    "multiline": "~0.1.0",
+    "handlebars": "~2.0.0-alpha.1"
+  }
+}
