@@ -4,5 +4,45 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.js-scope {
+.js-scope-cursor-over-word * {
+  color: orange !important;
+}
+
+.js-scope-group, .js-scope-variable {
+  position: relative;
+} 
+
+.js-scope-group {
+  min-width: 200px;
+  padding: 4px 8px;
+  margin: 0px;
+  background: @panel-heading-background-color;
+  border-bottom:1px solid @panel-heading-border-color;
+}
+
+.js-scope-group > span {
+  font-family: monospace;
+  color: @text-color-highlight;
+}
+
+.js-scope-variable-group {
+  margin: 0px;
+  padding: 0px;
+}
+
+.js-scope-variable-group li {
+  list-style: none;
+  margin: 2px 0px;
+  padding:4px 7px;
+  border-bottom: 1px solid @pane-item-border-color;
+}
+
+.js-scope-variable-group li > span {
+  font-family: monospace;
+}
+
+.js-scope-location {
+  position: absolute;
+  top: 4px;
+  right: 8px;  
 }

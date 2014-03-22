@@ -1,6 +1,6 @@
 <div>
-  <div>
-    <a class="{{ block.type }}" href="#">
+  <div class="js-scope-group">
+    <span>
     {{#if block.id}}
       {{block.id.name}}
     {{else}}{{#unless block.parent}}
@@ -9,18 +9,22 @@
       {{filename}}
     {{/unless}}
     {{/if}}
-    <code>
-      L{{ block.loc.start.line }}:{{ block.loc.start.column }}
+    </span>
+    <code class="js-scope-location">
+      <a rel="line" class="{{ block.type }}" href="#{{ block.loc.start.line }}:{{ block.loc.start.column }}">
+        L{{ block.loc.start.line }}
+      </a>
     </code>
-    </a>
   </div>
-  <ol>
+  <ol class="js-scope-variable-group">
     {{#each variables}}
       {{#if defs.length}}
-        <li class="{{ defs.0.type }}" data-index="{{@index}}">
-          <a href="#"><code contenteditable>{{ name }}</code></a>
-          <code>
-            L{{ defs.0.node.loc.start.line }}:{{ defs.0.node.loc.start.column }}
+        <li class="js-scope-variable {{ defs.0.type }}" data-index="{{@index}}">
+          <span contenteditable>{{ name }}</span>
+          <code class="js-scope-location">
+            <a rel="line" href="#{{ defs.0.node.loc.start.line }}:{{ defs.0.node.loc.start.column }}">
+              L{{ defs.0.node.loc.start.line }}
+            </a>
           </code>
         </li>
       {{/if}}
